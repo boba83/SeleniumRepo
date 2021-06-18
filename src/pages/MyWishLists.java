@@ -11,7 +11,8 @@ public class MyWishLists {
 	WebElement saveButton;
 	WebElement deleteButton;
 	WebElement backToYourAccount;
-	WebElement okPopUpButton; // kako inspect od ovoga???
+	WebElement welcomeToYourAccount;
+	WebElement directLink;
 
 	public MyWishLists(WebDriver driver) {
 		super();
@@ -28,14 +29,18 @@ public class MyWishLists {
 
 	public WebElement getDeleteButton() {
 		return driver.findElement(By.xpath("//*[@id=\"wishlist_34849\"]/td[6]/a/i"));
-	}                                      
+	}
 
 	public WebElement getBackToYourAccount() {
 		return driver.findElement(By.xpath("//*[@id=\"mywishlist\"]/ul/li[1]/a/span"));
 	}
 
-	public WebElement getOkPopUpButton() { // kako inspect od ovoga???
-		return okPopUpButton; // kako inspect od ovoga???
+	public WebElement getWelcomeToYourAccount() {
+		return driver.findElement(By.className("info-account"));
+	}
+
+	public WebElement getDirectLink() {
+		return driver.findElement(By.xpath("//*[@id=\"wishlist_35525\"]/td[5]/a"));
 	}
 
 	public void nameOfList(String name) {
@@ -51,8 +56,12 @@ public class MyWishLists {
 		this.getDeleteButton().click();
 	}
 
-	public void okPopUp() { // kako ovo???
-		this.getOkPopUpButton().click(); // kako ovo??
+	public String textFromWelcomeToYourAccount() {
+		return this.getWelcomeToYourAccount().getText();
+	}
+
+	public String textFromDirectLink() {
+		return this.getDirectLink().getText();
 	}
 
 }

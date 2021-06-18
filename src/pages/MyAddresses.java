@@ -5,8 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-
-
 public class MyAddresses {
 	WebDriver driver;
 
@@ -15,12 +13,9 @@ public class MyAddresses {
 	
 	WebElement addNewAddressButton;
 	WebElement backToYourAccountButton; 
-	WebElement addressField;  // nije dobar lokator za ovaj element
+	WebElement addressField; 
 	WebElement cityField;
 	Select selectStateField;
-	
-	//WebElement stateField;
-	
 	WebElement zipPostalCodeField;
 	WebElement countryField;
 	WebElement homePhoneField;
@@ -35,10 +30,7 @@ public class MyAddresses {
 
 	public WebElement getUpdateButton() {
 		return driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/div/div/ul/li[9]/a[1]/span"));
-		//return driver.findElement(By.className("address_update"));
 	}
-
-
 
 	public WebElement getDeleteButton() {
 		return driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/div/div/ul/li[9]/a[2]/span"));
@@ -80,7 +72,7 @@ public class MyAddresses {
 		//return selectStateField = new Select(driver.findElement(By.id("uniform-id_state")));
 	}*/
 	
-		//return selectStateField = new Select(driver.findElement(By.id("uniform-id_state"))); //probaj ovo
+		//return selectStateField = new Select(driver.findElement(By.id("uniform-id_state"))); 
 	
 
 	public WebElement getZipPostalCodeField() {
@@ -105,11 +97,6 @@ public class MyAddresses {
 
 	public WebElement getSaveButton() {
 		return driver.findElement(By.xpath("//*[@id=\"submitAddress\"]"));
-		// return driver.findElement(By.id("submitAddress"));
-		// return driver.findElement(By.className("button-medium"));
-		// return driver.findElement(By.xpath("//*[@id=\"submitAddress\"]/span/i"));
-		// return driver.findElement(By.xpath("//*[@id=\"submitAddress\"]/span"));
-
 	}
 
 	public WebElement getBackToYourAddress() {
